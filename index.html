@@ -1,554 +1,331 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HR Management System</title>
+ export default function HRRecruitmentWebsite() {
+  const companies = [
+    "TechNova Pvt Ltd",
+    "Skyline Infotech",
+    "Global Manufacturing",
+    "Future BPO Services",
+    "Bright Logistics"
+  ];
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-
-<style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
-}
-
-body{
-    background:#020b2d;
-    color:white;
-    overflow-x:hidden;
-}
-
-/* Animated Background */
-
-body::before{
-    content:'';
-    position:fixed;
-    width:100%;
-    height:100%;
-    background:
-    radial-gradient(circle at 20% 20%, rgba(0,140,255,.3), transparent 25%),
-    radial-gradient(circle at 80% 30%, rgba(120,0,255,.3), transparent 25%),
-    radial-gradient(circle at 50% 80%, rgba(0,255,255,.2), transparent 25%);
-    animation:bgMove 8s infinite alternate;
-    z-index:-1;
-}
-
-@keyframes bgMove{
-    from{
-        transform:scale(1);
+  const jobs = [
+    {
+      title: "Laravel Developer",
+      company: "TechNova Pvt Ltd",
+      location: "Jaipur",
+      salary: "₹25,000 - ₹40,000"
+    },
+    {
+      title: "Customer Support Executive",
+      company: "Future BPO Services",
+      location: "Delhi",
+      salary: "₹18,000 - ₹28,000"
+    },
+    {
+      title: "Sales Executive",
+      company: "Bright Logistics",
+      location: "Mumbai",
+      salary: "₹20,000 - ₹35,000"
     }
-    to{
-        transform:scale(1.1);
-    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-gray-100 text-gray-800">
+      {/* Navbar */}
+      <header className="bg-white shadow-md sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+          <div>
+            <h1 className="text-2xl font-bold text-blue-700"> HR Services</h1>
+            <p className="text-sm text-gray-500">Recruitment & Placement Agency</p>
+          </div>
+
+          <nav className="hidden md:flex gap-6 font-medium">
+            <a href="#home" className="hover:text-blue-600">Home</a>
+            <a href="#about" className="hover:text-blue-600">About</a>
+            <a href="#jobs" className="hover:text-blue-600">Jobs</a>
+            <a href="#companies" className="hover:text-blue-600">Companies</a>
+            <a href="#contact" className="hover:text-blue-600">Contact</a>
+          </nav>
+        </div>
+      </header>
+
+      {/* Hero Section */}
+      <section
+        id="home"
+        className="bg-gradient-to-r from-blue-700 to-indigo-700 text-white py-20"
+      >
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+          <div>
+            <h2 className="text-5xl font-bold leading-tight mb-6">
+              Best HR & Recruitment Solutions
+            </h2>
+            <p className="text-lg text-blue-100 mb-8">
+              We connect talented candidates with top companies across India.
+              Trusted by multiple companies for hiring skilled employees.
+            </p>
+
+            <div className="flex gap-4">
+              <button className="bg-white text-blue-700 px-6 py-3 rounded-2xl font-semibold shadow-lg hover:scale-105 transition">
+                Apply for Job
+              </button>
+
+              <button className="border border-white px-6 py-3 rounded-2xl hover:bg-white hover:text-blue-700 transition">
+                Contact HR
+              </button>
+            </div>
+          </div>
+
+          <div className="bg-white text-gray-800 p-8 rounded-3xl shadow-2xl">
+            <h3 className="text-2xl font-bold mb-6">Quick Job Apply</h3>
+
+            <div className="space-y-4">
+              <input
+                type="text"
+                placeholder="Full Name"
+                className="w-full border rounded-xl px-4 py-3"
+              />
+
+              <input
+                type="email"
+                placeholder="Email Address"
+                className="w-full border rounded-xl px-4 py-3"
+              />
+
+              <input
+                type="tel"
+                placeholder="Phone Number"
+                className="w-full border rounded-xl px-4 py-3"
+              />
+
+              <select className="w-full border rounded-xl px-4 py-3">
+                <option>Select Job Category</option>
+                <option>Developer</option>
+                <option>BPO</option>
+                <option>Sales</option>
+                <option>Marketing</option>
+              </select>
+
+              <button className="w-full bg-blue-700 text-white py-3 rounded-xl font-semibold hover:bg-blue-800 transition">
+                Submit Application
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <img
+              src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
+              alt="HR Team"
+              className="rounded-3xl shadow-2xl h-[400px] w-full object-cover"
+            />
+          </div>
+
+          <div>
+            <h3 className="text-4xl font-bold mb-6 text-blue-700">
+              About Our HR Agency
+            </h3>
+
+            <p className="text-lg text-gray-600 leading-8 mb-6">
+              We help companies hire talented employees and help candidates
+              find the right jobs. We work with multiple companies and provide
+              fast recruitment services for IT, BPO, Sales, Marketing and other
+              industries.
+            </p>
+
+            <div className="grid grid-cols-2 gap-6 mt-8">
+              <div className="bg-blue-50 p-6 rounded-2xl text-center shadow-md">
+                <h4 className="text-3xl font-bold text-blue-700">5+</h4>
+                <p className="text-gray-600">Partner Companies</p>
+              </div>
+
+              <div className="bg-blue-50 p-6 rounded-2xl text-center shadow-md">
+                <h4 className="text-3xl font-bold text-blue-700">500+</h4>
+                <p className="text-gray-600">Candidates Placed</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Companies Section */}
+      <section id="companies" className="py-20 bg-gray-100">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <h3 className="text-4xl font-bold text-blue-700 mb-4">
+              Partner Companies
+            </h3>
+            <p className="text-gray-600 text-lg">
+              Trusted companies working with us.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-5 gap-6">
+            {companies.map((company, index) => (
+              <div
+                key={index}
+                className="bg-white p-6 rounded-2xl shadow-md text-center hover:shadow-2xl transition"
+              >
+                <div className="text-5xl mb-4">🏢</div>
+                <h4 className="font-bold text-lg">{company}</h4>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Jobs Section */}
+      <section id="jobs" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <h3 className="text-4xl font-bold text-blue-700 mb-4">
+              Latest Job Openings
+            </h3>
+            <p className="text-gray-600 text-lg">
+              Apply for the latest vacancies.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {jobs.map((job, index) => (
+              <div
+                key={index}
+                className="bg-gray-50 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition"
+              >
+                <h4 className="text-2xl font-bold mb-4">{job.title}</h4>
+                <p className="text-gray-600 mb-2">🏢 {job.company}</p>
+                <p className="text-gray-600 mb-2">📍 {job.location}</p>
+                <p className="text-gray-600 mb-6">💰 {job.salary}</p>
+
+                <button className="w-full bg-blue-700 text-white py-3 rounded-2xl font-semibold hover:bg-blue-800 transition">
+                  Apply Now
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="py-20 bg-gradient-to-r from-indigo-700 to-blue-700 text-white">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <h3 className="text-4xl font-bold mb-12">Why Choose Us?</h3>
+
+          <div className="grid md:grid-cols-4 gap-8">
+            <div className="bg-white/10 backdrop-blur-md p-8 rounded-3xl">
+              <div className="text-5xl mb-4">⚡</div>
+              <h4 className="text-xl font-bold mb-3">Fast Hiring</h4>
+              <p className="text-blue-100">
+                Quick recruitment process for companies and candidates.
+              </p>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-md p-8 rounded-3xl">
+              <div className="text-5xl mb-4">🎯</div>
+              <h4 className="text-xl font-bold mb-3">Right Talent</h4>
+              <p className="text-blue-100">
+                We provide skilled candidates for every industry.
+              </p>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-md p-8 rounded-3xl">
+              <div className="text-5xl mb-4">🤝</div>
+              <h4 className="text-xl font-bold mb-3">Trusted Network</h4>
+              <p className="text-blue-100">
+                Connected with multiple trusted companies.
+              </p>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-md p-8 rounded-3xl">
+              <div className="text-5xl mb-4">📈</div>
+              <h4 className="text-xl font-bold mb-3">Career Growth</h4>
+              <p className="text-blue-100">
+                Helping candidates build successful careers.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10">
+          <div>
+            <h3 className="text-4xl font-bold text-blue-700 mb-6">
+              Contact Us
+            </h3>
+
+            <p className="text-lg text-gray-600 mb-8 leading-8">
+              Looking for employees or searching for jobs? Contact our HR team today.
+            </p>
+
+            <div className="space-y-6">
+              <div className="bg-gray-100 p-5 rounded-2xl">
+                <h4 className="font-bold text-lg">📞 Phone</h4>
+                <p className="text-gray-600">+91 9251836329</p>
+              </div>
+
+              <div className="bg-gray-100 p-5 rounded-2xl">
+                <h4 className="font-bold text-lg">📧 Email</h4>
+                <p className="text-gray-600">gobhr.businessmanagment@gmail.com</p>
+              </div>
+
+              <div className="bg-gray-100 p-5 rounded-2xl">
+                <h4 className="font-bold text-lg">📍 Address</h4>
+                <p className="text-gray-600">Jaipur, Rajasthan</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-gray-100 p-8 rounded-3xl shadow-lg">
+            <h4 className="text-2xl font-bold mb-6">Send Message</h4>
+
+            <div className="space-y-4">
+              <input
+                type="text"
+                placeholder="Your Name"
+                className="w-full border rounded-xl px-4 py-3"
+              />
+
+              <input
+                type="email"
+                placeholder="Your Email"
+                className="w-full border rounded-xl px-4 py-3"
+              />
+
+              <textarea
+                rows="5"
+                placeholder="Write your message..."
+                className="w-full border rounded-xl px-4 py-3"
+              ></textarea>
+
+              <button className="w-full bg-blue-700 text-white py-3 rounded-xl font-semibold hover:bg-blue-800 transition">
+                Send Message
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-900 text-gray-300 py-8">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+          <div>
+            <h4 className="text-2xl font-bold text-white">
+              Dilkush HR Services
+            </h4>
+            <p className="text-gray-400 mt-2">
+              Professional Recruitment & Placement Agency.
+            </p>
+          </div>
+
+          <div className="mt-6 md:mt-0">
+            <p>© 2026 All Rights Reserved.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
 }
-
-/* Navbar */
-
-nav{
-    width:100%;
-    padding:18px 8%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    position:sticky;
-    top:0;
-    background:rgba(0,0,0,.3);
-    backdrop-filter:blur(10px);
-    z-index:1000;
-}
-
-.logo{
-    font-size:28px;
-    font-weight:bold;
-    color:#3ea6ff;
-}
-
-nav ul{
-    display:flex;
-    list-style:none;
-    gap:25px;
-}
-
-nav ul li a{
-    color:white;
-    text-decoration:none;
-    transition:.3s;
-}
-
-nav ul li a:hover{
-    color:#3ea6ff;
-}
-
-/* Hero */
-
-.hero{
-    min-height:100vh;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:50px 8%;
-    gap:40px;
-    flex-wrap:wrap;
-}
-
-.hero-text{
-    flex:1;
-}
-
-.hero-text h1{
-    font-size:65px;
-    margin-bottom:20px;
-}
-
-.hero-text h1 span{
-    color:#3ea6ff;
-}
-
-.hero-text p{
-    font-size:20px;
-    color:#d1d5db;
-    line-height:1.8;
-}
-
-.btns{
-    margin-top:30px;
-}
-
-.btn{
-    display:inline-block;
-    padding:14px 35px;
-    margin-right:15px;
-    border-radius:50px;
-    text-decoration:none;
-    color:white;
-    background:linear-gradient(45deg,#3ea6ff,#7a3cff);
-    transition:.4s;
-}
-
-.btn:hover{
-    transform:translateY(-5px);
-}
-
-.hero-image{
-    flex:1;
-}
-
-.hero-image img{
-    width:100%;
-    border-radius:20px;
-    animation:float 3s ease-in-out infinite;
-}
-
-@keyframes float{
-    0%{
-        transform:translateY(0);
-    }
-    50%{
-        transform:translateY(-15px);
-    }
-    100%{
-        transform:translateY(0);
-    }
-}
-
-/* Features */
-
-.features{
-    padding:80px 8%;
-}
-
-.section-title{
-    text-align:center;
-    font-size:45px;
-    margin-bottom:50px;
-}
-
-.feature-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
-}
-
-.card{
-    background:rgba(255,255,255,.05);
-    padding:35px;
-    border-radius:20px;
-    transition:.4s;
-    backdrop-filter:blur(10px);
-    border:1px solid rgba(255,255,255,.1);
-}
-
-.card:hover{
-    transform:translateY(-10px);
-    background:rgba(62,166,255,.1);
-}
-
-.card i{
-    font-size:40px;
-    color:#3ea6ff;
-    margin-bottom:20px;
-}
-
-.card h3{
-    margin-bottom:15px;
-}
-
-.card p{
-    color:#cbd5e1;
-    line-height:1.7;
-}
-
-/* Stats */
-
-.stats{
-    padding:50px 8%;
-}
-
-.stats-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:20px;
-}
-
-.stat-box{
-    background:linear-gradient(45deg,#3ea6ff,#7a3cff);
-    padding:35px;
-    text-align:center;
-    border-radius:20px;
-}
-
-.stat-box h2{
-    font-size:45px;
-}
-
-.stat-box p{
-    margin-top:10px;
-}
-
-/* Testimonials */
-
-.testimonials{
-    padding:80px 8%;
-}
-
-.testimonial-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:25px;
-}
-
-.testimonial{
-    background:rgba(255,255,255,.05);
-    padding:30px;
-    border-radius:20px;
-}
-
-.testimonial p{
-    color:#d1d5db;
-    line-height:1.8;
-}
-
-.user{
-    display:flex;
-    align-items:center;
-    margin-top:20px;
-}
-
-.user img{
-    width:60px;
-    height:60px;
-    border-radius:50%;
-    margin-right:15px;
-}
-
-/* Contact */
-
-.contact{
-    padding:80px 8%;
-}
-
-.contact-box{
-    background:rgba(255,255,255,.05);
-    padding:40px;
-    border-radius:20px;
-}
-
-.contact form{
-    display:grid;
-    gap:20px;
-}
-
-.contact input,
-.contact textarea{
-    width:100%;
-    padding:15px;
-    border:none;
-    border-radius:10px;
-    background:#0f172a;
-    color:white;
-}
-
-.contact button{
-    padding:15px;
-    border:none;
-    border-radius:10px;
-    background:linear-gradient(45deg,#3ea6ff,#7a3cff);
-    color:white;
-    cursor:pointer;
-    font-size:18px;
-}
-
-/* Footer */
-
-footer{
-    padding:30px;
-    text-align:center;
-    background:rgba(0,0,0,.3);
-    margin-top:50px;
-}
-
-/* Responsive */
-
-@media(max-width:768px){
-
-.hero{
-    flex-direction:column;
-    text-align:center;
-}
-
-.hero-text h1{
-    font-size:45px;
-}
-
-nav{
-    flex-direction:column;
-    gap:20px;
-}
-
-nav ul{
-    flex-wrap:wrap;
-    justify-content:center;
-}
-
-}
-
-</style>
-</head>
-
-<body>
-
-<!-- Navbar -->
-
-<nav>
-
-<div class="logo">
-<i class="fa-solid fa-users"></i> HR Management
-</div>
-
-<ul>
-<li><a href="#">Home</a></li>
-<li><a href="#">Services</a></li>
-<li><a href="#">Employees</a></li>
-<li><a href="#">Payroll</a></li>
-<li><a href="#">Reports</a></li>
-<li><a href="#">Contact</a></li>
-</ul>
-
-</nav>
-
-<!-- Hero -->
-
-<section class="hero">
-
-<div class="hero-text">
-
-<h1>Smart <span>HR</span> Management System</h1>
-
-<p>
-Manage employees, payroll, attendance,
-recruitment and reports from one powerful dashboard.
-Responsive and modern HR solution for businesses.
-</p>
-
-<div class="btns">
-<a href="#" class="btn">Get Started</a>
-<a href="#" class="btn">Explore</a>
-</div>
-
-</div>
-
-<div class="hero-image">
-
-<img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop">
-
-</div>
-
-</section>
-
-<!-- Features -->
-
-<section class="features">
-
-<h2 class="section-title">Our Features</h2>
-
-<div class="feature-grid">
-
-<div class="card">
-<i class="fa-solid fa-user-group"></i>
-<h3>Employee Management</h3>
-<p>
-Manage employee records and departments easily.
-</p>
-</div>
-
-<div class="card">
-<i class="fa-solid fa-calendar-check"></i>
-<h3>Attendance Tracking</h3>
-<p>
-Track attendance and leave records smartly.
-</p>
-</div>
-
-<div class="card">
-<i class="fa-solid fa-money-bill"></i>
-<h3>Payroll System</h3>
-<p>
-Generate salaries and payroll reports automatically.
-</p>
-</div>
-
-<div class="card">
-<i class="fa-solid fa-chart-line"></i>
-<h3>Reports & Analytics</h3>
-<p>
-Get powerful business insights with analytics.
-</p>
-</div>
-
-</div>
-
-</section>
-
-<!-- Stats -->
-
-<section class="stats">
-
-<div class="stats-grid">
-
-<div class="stat-box">
-<h2>500+</h2>
-<p>Employees</p>
-</div>
-
-<div class="stat-box">
-<h2>25+</h2>
-<p>Departments</p>
-</div>
-
-<div class="stat-box">
-<h2>98%</h2>
-<p>Attendance</p>
-</div>
-
-<div class="stat-box">
-<h2>99%</h2>
-<p>Accuracy</p>
-</div>
-
-</div>
-
-</section>
-
-<!-- Testimonials -->
-
-<section class="testimonials">
-
-<h2 class="section-title">What Clients Say</h2>
-
-<div class="testimonial-grid">
-
-<div class="testimonial">
-
-<p>
-This HR system made our work very fast and easy.
-Amazing UI and responsive design.
-</p>
-
-<div class="user">
-
-<img src="https://randomuser.me/api/portraits/men/32.jpg">
-
-<div>
-<h4>Amit Sharma</h4>
-<span>HR Manager</span>
-</div>
-
-</div>
-
-</div>
-
-<div class="testimonial">
-
-<p>
-Attendance and payroll management is now automatic.
-Very useful system for companies.
-</p>
-
-<div class="user">
-
-<img src="https://randomuser.me/api/portraits/women/44.jpg">
-
-<div>
-<h4>Priya Verma</h4>
-<span>CEO</span>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- Contact -->
-
-<section class="contact">
-
-<h2 class="section-title">Contact Us</h2>
-
-<div class="contact-box">
-
-<form>
-
-<input type="text" placeholder="Your Name">
-
-<input type="email" placeholder="Your Email">
-
-<textarea rows="5" placeholder="Your Message"></textarea>
-
-<button type="submit">Send Message</button>
-
-</form>
-
-</div>
-
-</section>
-
-<!-- Footer -->
-
-<footer>
-
-<p>
-© 2026 HR Management System | Designed By Akhil
-</p>
-
-</footer>
-
-</body>
-</html>
