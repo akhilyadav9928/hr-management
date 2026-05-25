@@ -1,331 +1,409 @@
-export default function HRRecruitmentWebsite() {
-  const companies = [
-    "TechNova Pvt Ltd",
-    "Skyline Infotech",
-    "Global Manufacturing",
-    "Future BPO Services",
-    "Bright Logistics"
-  ];
+<!-- Add this inside <head> -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-  const jobs = [
-    {
-      title: "Laravel Developer",
-      company: "TechNova Pvt Ltd",
-      location: "Jaipur",
-      salary: "₹25,000 - ₹40,000"
-    },
-    {
-      title: "Customer Support Executive",
-      company: "Future BPO Services",
-      location: "Delhi",
-      salary: "₹18,000 - ₹28,000"
-    },
-    {
-      title: "Sales Executive",
-      company: "Bright Logistics",
-      location: "Mumbai",
-      salary: "₹20,000 - ₹35,000"
-    }
-  ];
+<style>
 
-  return (
-    <div className="min-h-screen bg-gray-100 text-gray-800">
-      {/* Navbar */}
-      <header className="bg-white shadow-md sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <div>
-            <h1 className="text-2xl font-bold text-blue-700">Dilkush HR Services</h1>
-            <p className="text-sm text-gray-500">Recruitment & Placement Agency</p>
-          </div>
-
-          <nav className="hidden md:flex gap-6 font-medium">
-            <a href="#home" className="hover:text-blue-600">Home</a>
-            <a href="#about" className="hover:text-blue-600">About</a>
-            <a href="#jobs" className="hover:text-blue-600">Jobs</a>
-            <a href="#companies" className="hover:text-blue-600">Companies</a>
-            <a href="#contact" className="hover:text-blue-600">Contact</a>
-          </nav>
-        </div>
-      </header>
-
-      {/* Hero Section */}
-      <section
-        id="home"
-        className="bg-gradient-to-r from-blue-700 to-indigo-700 text-white py-20"
-      >
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
-          <div>
-            <h2 className="text-5xl font-bold leading-tight mb-6">
-              Best HR & Recruitment Solutions
-            </h2>
-            <p className="text-lg text-blue-100 mb-8">
-              We connect talented candidates with top companies across India.
-              Trusted by multiple companies for hiring skilled employees.
-            </p>
-
-            <div className="flex gap-4">
-              <button className="bg-white text-blue-700 px-6 py-3 rounded-2xl font-semibold shadow-lg hover:scale-105 transition">
-                Apply for Job
-              </button>
-
-              <button className="border border-white px-6 py-3 rounded-2xl hover:bg-white hover:text-blue-700 transition">
-                Contact HR
-              </button>
-            </div>
-          </div>
-
-          <div className="bg-white text-gray-800 p-8 rounded-3xl shadow-2xl">
-            <h3 className="text-2xl font-bold mb-6">Quick Job Apply</h3>
-
-            <div className="space-y-4">
-              <input
-                type="text"
-                placeholder="Full Name"
-                className="w-full border rounded-xl px-4 py-3"
-              />
-
-              <input
-                type="email"
-                placeholder="Email Address"
-                className="w-full border rounded-xl px-4 py-3"
-              />
-
-              <input
-                type="tel"
-                placeholder="Phone Number"
-                className="w-full border rounded-xl px-4 py-3"
-              />
-
-              <select className="w-full border rounded-xl px-4 py-3">
-                <option>Select Job Category</option>
-                <option>Developer</option>
-                <option>BPO</option>
-                <option>Sales</option>
-                <option>Marketing</option>
-              </select>
-
-              <button className="w-full bg-blue-700 text-white py-3 rounded-xl font-semibold hover:bg-blue-800 transition">
-                Submit Application
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* About Section */}
-      <section id="about" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <img
-              src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
-              alt="HR Team"
-              className="rounded-3xl shadow-2xl h-[400px] w-full object-cover"
-            />
-          </div>
-
-          <div>
-            <h3 className="text-4xl font-bold mb-6 text-blue-700">
-              About Our HR Agency
-            </h3>
-
-            <p className="text-lg text-gray-600 leading-8 mb-6">
-              We help companies hire talented employees and help candidates
-              find the right jobs. We work with multiple companies and provide
-              fast recruitment services for IT, BPO, Sales, Marketing and other
-              industries.
-            </p>
-
-            <div className="grid grid-cols-2 gap-6 mt-8">
-              <div className="bg-blue-50 p-6 rounded-2xl text-center shadow-md">
-                <h4 className="text-3xl font-bold text-blue-700">5+</h4>
-                <p className="text-gray-600">Partner Companies</p>
-              </div>
-
-              <div className="bg-blue-50 p-6 rounded-2xl text-center shadow-md">
-                <h4 className="text-3xl font-bold text-blue-700">500+</h4>
-                <p className="text-gray-600">Candidates Placed</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Companies Section */}
-      <section id="companies" className="py-20 bg-gray-100">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <h3 className="text-4xl font-bold text-blue-700 mb-4">
-              Partner Companies
-            </h3>
-            <p className="text-gray-600 text-lg">
-              Trusted companies working with us.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-5 gap-6">
-            {companies.map((company, index) => (
-              <div
-                key={index}
-                className="bg-white p-6 rounded-2xl shadow-md text-center hover:shadow-2xl transition"
-              >
-                <div className="text-5xl mb-4">🏢</div>
-                <h4 className="font-bold text-lg">{company}</h4>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Jobs Section */}
-      <section id="jobs" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <h3 className="text-4xl font-bold text-blue-700 mb-4">
-              Latest Job Openings
-            </h3>
-            <p className="text-gray-600 text-lg">
-              Apply for the latest vacancies.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {jobs.map((job, index) => (
-              <div
-                key={index}
-                className="bg-gray-50 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition"
-              >
-                <h4 className="text-2xl font-bold mb-4">{job.title}</h4>
-                <p className="text-gray-600 mb-2">🏢 {job.company}</p>
-                <p className="text-gray-600 mb-2">📍 {job.location}</p>
-                <p className="text-gray-600 mb-6">💰 {job.salary}</p>
-
-                <button className="w-full bg-blue-700 text-white py-3 rounded-2xl font-semibold hover:bg-blue-800 transition">
-                  Apply Now
-                </button>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Us */}
-      <section className="py-20 bg-gradient-to-r from-indigo-700 to-blue-700 text-white">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <h3 className="text-4xl font-bold mb-12">Why Choose Us?</h3>
-
-          <div className="grid md:grid-cols-4 gap-8">
-            <div className="bg-white/10 backdrop-blur-md p-8 rounded-3xl">
-              <div className="text-5xl mb-4">⚡</div>
-              <h4 className="text-xl font-bold mb-3">Fast Hiring</h4>
-              <p className="text-blue-100">
-                Quick recruitment process for companies and candidates.
-              </p>
-            </div>
-
-            <div className="bg-white/10 backdrop-blur-md p-8 rounded-3xl">
-              <div className="text-5xl mb-4">🎯</div>
-              <h4 className="text-xl font-bold mb-3">Right Talent</h4>
-              <p className="text-blue-100">
-                We provide skilled candidates for every industry.
-              </p>
-            </div>
-
-            <div className="bg-white/10 backdrop-blur-md p-8 rounded-3xl">
-              <div className="text-5xl mb-4">🤝</div>
-              <h4 className="text-xl font-bold mb-3">Trusted Network</h4>
-              <p className="text-blue-100">
-                Connected with multiple trusted companies.
-              </p>
-            </div>
-
-            <div className="bg-white/10 backdrop-blur-md p-8 rounded-3xl">
-              <div className="text-5xl mb-4">📈</div>
-              <h4 className="text-xl font-bold mb-3">Career Growth</h4>
-              <p className="text-blue-100">
-                Helping candidates build successful careers.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section id="contact" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10">
-          <div>
-            <h3 className="text-4xl font-bold text-blue-700 mb-6">
-              Contact Us
-            </h3>
-
-            <p className="text-lg text-gray-600 mb-8 leading-8">
-              Looking for employees or searching for jobs? Contact our HR team today.
-            </p>
-
-            <div className="space-y-6">
-              <div className="bg-gray-100 p-5 rounded-2xl">
-                <h4 className="font-bold text-lg">📞 Phone</h4>
-                <p className="text-gray-600">+91 9251836329</p>
-              </div>
-
-              <div className="bg-gray-100 p-5 rounded-2xl">
-                <h4 className="font-bold text-lg">📧 Email</h4>
-                <p className="text-gray-600">gobhr.businessmanagment@gmail.com</p>
-              </div>
-
-              <div className="bg-gray-100 p-5 rounded-2xl">
-                <h4 className="font-bold text-lg">📍 Address</h4>
-                <p className="text-gray-600">Jaipur, Rajasthan</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-gray-100 p-8 rounded-3xl shadow-lg">
-            <h4 className="text-2xl font-bold mb-6">Send Message</h4>
-
-            <div className="space-y-4">
-              <input
-                type="text"
-                placeholder="Your Name"
-                className="w-full border rounded-xl px-4 py-3"
-              />
-
-              <input
-                type="email"
-                placeholder="Your Email"
-                className="w-full border rounded-xl px-4 py-3"
-              />
-
-              <textarea
-                rows="5"
-                placeholder="Write your message..."
-                className="w-full border rounded-xl px-4 py-3"
-              ></textarea>
-
-              <button className="w-full bg-blue-700 text-white py-3 rounded-xl font-semibold hover:bg-blue-800 transition">
-                Send Message
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-gray-900 text-gray-300 py-8">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
-          <div>
-            <h4 className="text-2xl font-bold text-white">
-              Dilkush HR Services
-            </h4>
-            <p className="text-gray-400 mt-2">
-              Professional Recruitment & Placement Agency.
-            </p>
-          </div>
-
-          <div className="mt-6 md:mt-0">
-            <p>© 2026 All Rights Reserved.</p>
-          </div>
-        </div>
-      </footer>
-    </div>
-  );
+html{
+scroll-behavior:smooth;
 }
+
+body{
+overflow-x:hidden;
+}
+
+/* Animated Background */
+
+.bg-animation{
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+z-index:-1;
+overflow:hidden;
+}
+
+.bg-animation span{
+position:absolute;
+display:block;
+width:20px;
+height:20px;
+background:rgba(59,130,246,0.15);
+animation:animate 25s linear infinite;
+bottom:-150px;
+border-radius:50%;
+}
+
+.bg-animation span:nth-child(1){
+left:10%;
+width:80px;
+height:80px;
+animation-delay:0s;
+}
+
+.bg-animation span:nth-child(2){
+left:20%;
+width:30px;
+height:30px;
+animation-delay:2s;
+animation-duration:12s;
+}
+
+.bg-animation span:nth-child(3){
+left:70%;
+width:100px;
+height:100px;
+animation-delay:4s;
+}
+
+.bg-animation span:nth-child(4){
+left:40%;
+width:50px;
+height:50px;
+animation-delay:0s;
+animation-duration:18s;
+}
+
+.bg-animation span:nth-child(5){
+left:65%;
+width:40px;
+height:40px;
+animation-delay:0s;
+}
+
+@keyframes animate{
+0%{
+transform:translateY(0) rotate(0deg);
+opacity:1;
+}
+100%{
+transform:translateY(-1000px) rotate(720deg);
+opacity:0;
+}
+}
+
+/* Hover Effects */
+
+.card-hover{
+transition:0.4s;
+}
+
+.card-hover:hover{
+transform:translateY(-10px) scale(1.02);
+box-shadow:0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* Glass Effect */
+
+.glass{
+background:rgba(255,255,255,0.1);
+backdrop-filter:blur(12px);
+border:1px solid rgba(255,255,255,0.2);
+}
+
+/* Gradient Button */
+
+.gradient-btn{
+background:linear-gradient(to right,#2563eb,#7c3aed);
+transition:0.4s;
+}
+
+.gradient-btn:hover{
+transform:scale(1.05);
+}
+
+/* Stats */
+
+.stats-box{
+background:white;
+padding:30px;
+border-radius:25px;
+text-align:center;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+transition:0.4s;
+}
+
+.stats-box:hover{
+transform:translateY(-10px);
+}
+
+</style>
+
+<!-- Add this after <body> -->
+
+<div class="bg-animation">
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+<!-- Replace Hero Section with this -->
+
+<section id="home"
+class="bg-gradient-to-r from-blue-700 to-indigo-800 text-white py-24 relative overflow-hidden">
+
+<div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-14 items-center">
+
+<div>
+
+<p class="uppercase tracking-[4px] text-blue-200 mb-4">
+Professional HR Services
+</p>
+
+<h2 class="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
+Hire The Best Talent
+For Your Company
+</h2>
+
+<p class="text-lg text-blue-100 mb-8 leading-8">
+We help businesses recruit skilled employees and help candidates
+find their dream jobs across IT, Sales, BPO and Marketing industries.
+</p>
+
+<div class="flex gap-4 flex-wrap">
+
+<button class="gradient-btn px-8 py-4 rounded-2xl font-semibold shadow-2xl">
+Apply Now
+</button>
+
+<button class="border border-white px-8 py-4 rounded-2xl hover:bg-white hover:text-blue-700 transition">
+Explore Jobs
+</button>
+
+</div>
+
+<div class="grid grid-cols-3 gap-5 mt-12">
+
+<div>
+<h3 class="text-4xl font-bold">500+</h3>
+<p class="text-blue-200">Jobs Posted</p>
+</div>
+
+<div>
+<h3 class="text-4xl font-bold">120+</h3>
+<p class="text-blue-200">Companies</p>
+</div>
+
+<div>
+<h3 class="text-4xl font-bold">1K+</h3>
+<p class="text-blue-200">Candidates</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="glass p-8 rounded-[30px] shadow-2xl">
+
+<h3 class="text-3xl font-bold mb-6">
+Quick Apply
+</h3>
+
+<div class="space-y-5">
+
+<input type="text"
+placeholder="Full Name"
+class="w-full px-5 py-4 rounded-2xl text-black outline-none">
+
+<input type="email"
+placeholder="Email Address"
+class="w-full px-5 py-4 rounded-2xl text-black outline-none">
+
+<input type="tel"
+placeholder="Phone Number"
+class="w-full px-5 py-4 rounded-2xl text-black outline-none">
+
+<select class="w-full px-5 py-4 rounded-2xl text-black outline-none">
+<option>Select Category</option>
+<option>Developer</option>
+<option>BPO</option>
+<option>Sales</option>
+<option>Marketing</option>
+</select>
+
+<button class="gradient-btn w-full py-4 rounded-2xl text-white font-bold text-lg">
+Submit Application
+</button>
+
+</div>
+
+</div>
+
+</div>
+</section>
+
+<!-- Add this new Services Section -->
+
+<section class="py-24 bg-white">
+
+<div class="max-w-7xl mx-auto px-6">
+
+<div class="text-center mb-16">
+
+<h2 class="text-5xl font-bold text-blue-700 mb-5">
+Our Services
+</h2>
+
+<p class="text-gray-500 text-lg">
+Professional recruitment solutions for businesses.
+</p>
+
+</div>
+
+<div class="grid md:grid-cols-4 gap-8">
+
+<div class="card-hover bg-gray-50 p-8 rounded-3xl text-center">
+
+<div class="text-5xl text-blue-700 mb-5">
+<i class="fa-solid fa-users"></i>
+</div>
+
+<h3 class="text-2xl font-bold mb-4">
+Recruitment
+</h3>
+
+<p class="text-gray-600 leading-7">
+Find talented and skilled employees quickly.
+</p>
+
+</div>
+
+<div class="card-hover bg-gray-50 p-8 rounded-3xl text-center">
+
+<div class="text-5xl text-blue-700 mb-5">
+<i class="fa-solid fa-file-invoice-dollar"></i>
+</div>
+
+<h3 class="text-2xl font-bold mb-4">
+Payroll
+</h3>
+
+<p class="text-gray-600 leading-7">
+Manage salary and employee payroll efficiently.
+</p>
+
+</div>
+
+<div class="card-hover bg-gray-50 p-8 rounded-3xl text-center">
+
+<div class="text-5xl text-blue-700 mb-5">
+<i class="fa-solid fa-chart-line"></i>
+</div>
+
+<h3 class="text-2xl font-bold mb-4">
+Analytics
+</h3>
+
+<p class="text-gray-600 leading-7">
+Powerful reports and business analytics system.
+</p>
+
+</div>
+
+<div class="card-hover bg-gray-50 p-8 rounded-3xl text-center">
+
+<div class="text-5xl text-blue-700 mb-5">
+<i class="fa-solid fa-user-check"></i>
+</div>
+
+<h3 class="text-2xl font-bold mb-4">
+Attendance
+</h3>
+
+<p class="text-gray-600 leading-7">
+Track employee attendance and leaves smartly.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Add this Testimonials Section -->
+
+<section class="py-24 bg-gray-100">
+
+<div class="max-w-7xl mx-auto px-6">
+
+<div class="text-center mb-16">
+
+<h2 class="text-5xl font-bold text-blue-700 mb-5">
+Client Reviews
+</h2>
+
+</div>
+
+<div class="grid md:grid-cols-3 gap-8">
+
+<div class="card-hover bg-white p-8 rounded-3xl shadow-lg">
+
+<p class="text-gray-600 leading-8">
+Amazing HR service and fast recruitment process.
+Highly recommended for companies.
+</p>
+
+<div class="flex items-center mt-6 gap-4">
+
+<img src="https://randomuser.me/api/portraits/men/32.jpg"
+class="w-16 h-16 rounded-full">
+
+<div>
+<h4 class="font-bold text-lg">Amit Sharma</h4>
+<p class="text-gray-500">HR Manager</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="card-hover bg-white p-8 rounded-3xl shadow-lg">
+
+<p class="text-gray-600 leading-8">
+Professional recruitment agency with excellent support.
+</p>
+
+<div class="flex items-center mt-6 gap-4">
+
+<img src="https://randomuser.me/api/portraits/women/44.jpg"
+class="w-16 h-16 rounded-full">
+
+<div>
+<h4 class="font-bold text-lg">Priya Verma</h4>
+<p class="text-gray-500">CEO</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="card-hover bg-white p-8 rounded-3xl shadow-lg">
+
+<p class="text-gray-600 leading-8">
+Very responsive HR team and quality hiring services.
+</p>
+
+<div class="flex items-center mt-6 gap-4">
+
+<img src="https://randomuser.me/api/portraits/men/75.jpg"
+class="w-16 h-16 rounded-full">
+
+<div>
+<h4 class="font-bold text-lg">Rahul Mehta</h4>
+<p class="text-gray-500">Business Owner</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
