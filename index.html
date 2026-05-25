@@ -1,6 +1,15 @@
-<!-- Add this inside <head> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HR Services</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
 <link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
 <style>
 
@@ -10,6 +19,7 @@ scroll-behavior:smooth;
 
 body{
 overflow-x:hidden;
+font-family:Arial,sans-serif;
 }
 
 /* Animated Background */
@@ -22,6 +32,7 @@ top:0;
 left:0;
 z-index:-1;
 overflow:hidden;
+background:linear-gradient(to bottom right,#eff6ff,#dbeafe);
 }
 
 .bg-animation span{
@@ -29,7 +40,7 @@ position:absolute;
 display:block;
 width:20px;
 height:20px;
-background:rgba(59,130,246,0.15);
+background:rgba(37,99,235,0.15);
 animation:animate 25s linear infinite;
 bottom:-150px;
 border-radius:50%;
@@ -83,8 +94,6 @@ opacity:0;
 }
 }
 
-/* Hover Effects */
-
 .card-hover{
 transition:0.4s;
 }
@@ -93,16 +102,6 @@ transition:0.4s;
 transform:translateY(-10px) scale(1.02);
 box-shadow:0 20px 40px rgba(0,0,0,0.15);
 }
-
-/* Glass Effect */
-
-.glass{
-background:rgba(255,255,255,0.1);
-backdrop-filter:blur(12px);
-border:1px solid rgba(255,255,255,0.2);
-}
-
-/* Gradient Button */
 
 .gradient-btn{
 background:linear-gradient(to right,#2563eb,#7c3aed);
@@ -113,24 +112,11 @@ transition:0.4s;
 transform:scale(1.05);
 }
 
-/* Stats */
-
-.stats-box{
-background:white;
-padding:30px;
-border-radius:25px;
-text-align:center;
-box-shadow:0 10px 30px rgba(0,0,0,0.08);
-transition:0.4s;
-}
-
-.stats-box:hover{
-transform:translateY(-10px);
-}
-
 </style>
 
-<!-- Add this after <body> -->
+</head>
+
+<body class="bg-gray-100 text-gray-800">
 
 <div class="bg-animation">
 <span></span>
@@ -140,10 +126,41 @@ transform:translateY(-10px);
 <span></span>
 </div>
 
-<!-- Replace Hero Section with this -->
+<!-- Navbar -->
+
+<header class="bg-white/80 backdrop-blur-md shadow-md sticky top-0 z-50">
+
+<div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+
+<div>
+
+<h1 class="text-3xl font-bold text-blue-700">
+HR Services
+</h1>
+
+<p class="text-sm text-gray-500">
+Recruitment & Placement Agency
+</p>
+
+</div>
+
+<nav class="hidden md:flex gap-8 font-medium">
+
+<a href="#home" class="hover:text-blue-600">Home</a>
+<a href="#services" class="hover:text-blue-600">Services</a>
+<a href="#jobs" class="hover:text-blue-600">Jobs</a>
+<a href="#contact" class="hover:text-blue-600">Contact</a>
+
+</nav>
+
+</div>
+
+</header>
+
+<!-- Hero -->
 
 <section id="home"
-class="bg-gradient-to-r from-blue-700 to-indigo-800 text-white py-24 relative overflow-hidden">
+class="bg-gradient-to-r from-blue-700 to-indigo-800 text-white py-24">
 
 <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-14 items-center">
 
@@ -160,7 +177,7 @@ For Your Company
 
 <p class="text-lg text-blue-100 mb-8 leading-8">
 We help businesses recruit skilled employees and help candidates
-find their dream jobs across IT, Sales, BPO and Marketing industries.
+find their dream jobs across India.
 </p>
 
 <div class="flex gap-4 flex-wrap">
@@ -196,7 +213,7 @@ Explore Jobs
 
 </div>
 
-<div class="glass p-8 rounded-[30px] shadow-2xl">
+<div class="bg-white text-gray-800 p-8 rounded-[30px] shadow-2xl">
 
 <h3 class="text-3xl font-bold mb-6">
 Quick Apply
@@ -206,17 +223,17 @@ Quick Apply
 
 <input type="text"
 placeholder="Full Name"
-class="w-full px-5 py-4 rounded-2xl text-black outline-none">
+class="w-full px-5 py-4 rounded-2xl border outline-none">
 
 <input type="email"
 placeholder="Email Address"
-class="w-full px-5 py-4 rounded-2xl text-black outline-none">
+class="w-full px-5 py-4 rounded-2xl border outline-none">
 
 <input type="tel"
 placeholder="Phone Number"
-class="w-full px-5 py-4 rounded-2xl text-black outline-none">
+class="w-full px-5 py-4 rounded-2xl border outline-none">
 
-<select class="w-full px-5 py-4 rounded-2xl text-black outline-none">
+<select class="w-full px-5 py-4 rounded-2xl border outline-none">
 <option>Select Category</option>
 <option>Developer</option>
 <option>BPO</option>
@@ -233,11 +250,12 @@ Submit Application
 </div>
 
 </div>
+
 </section>
 
-<!-- Add this new Services Section -->
+<!-- Services -->
 
-<section class="py-24 bg-white">
+<section id="services" class="py-24 bg-white">
 
 <div class="max-w-7xl mx-auto px-6">
 
@@ -282,7 +300,7 @@ Payroll
 </h3>
 
 <p class="text-gray-600 leading-7">
-Manage salary and employee payroll efficiently.
+Manage salary and payroll efficiently.
 </p>
 
 </div>
@@ -298,7 +316,7 @@ Analytics
 </h3>
 
 <p class="text-gray-600 leading-7">
-Powerful reports and business analytics system.
+Powerful reports and analytics system.
 </p>
 
 </div>
@@ -314,7 +332,7 @@ Attendance
 </h3>
 
 <p class="text-gray-600 leading-7">
-Track employee attendance and leaves smartly.
+Track attendance and employee leaves.
 </p>
 
 </div>
@@ -325,9 +343,91 @@ Track employee attendance and leaves smartly.
 
 </section>
 
-<!-- Add this Testimonials Section -->
+<!-- Jobs -->
 
-<section class="py-24 bg-gray-100">
+<section id="jobs" class="py-24 bg-gray-100">
+
+<div class="max-w-7xl mx-auto px-6">
+
+<div class="text-center mb-16">
+
+<h2 class="text-5xl font-bold text-blue-700 mb-5">
+Latest Job Openings
+</h2>
+
+</div>
+
+<div class="grid md:grid-cols-3 gap-8">
+
+<div class="card-hover bg-white rounded-3xl p-8 shadow-lg">
+
+<h4 class="text-2xl font-bold mb-4">
+Laravel Developer
+</h4>
+
+<p class="text-gray-600 mb-2">
+📍 Jaipur
+</p>
+
+<p class="text-gray-600 mb-6">
+💰 ₹25,000 - ₹40,000
+</p>
+
+<button class="gradient-btn w-full text-white py-3 rounded-2xl">
+Apply Now
+</button>
+
+</div>
+
+<div class="card-hover bg-white rounded-3xl p-8 shadow-lg">
+
+<h4 class="text-2xl font-bold mb-4">
+Customer Support Executive
+</h4>
+
+<p class="text-gray-600 mb-2">
+📍 Delhi
+</p>
+
+<p class="text-gray-600 mb-6">
+💰 ₹18,000 - ₹28,000
+</p>
+
+<button class="gradient-btn w-full text-white py-3 rounded-2xl">
+Apply Now
+</button>
+
+</div>
+
+<div class="card-hover bg-white rounded-3xl p-8 shadow-lg">
+
+<h4 class="text-2xl font-bold mb-4">
+Sales Executive
+</h4>
+
+<p class="text-gray-600 mb-2">
+📍 Mumbai
+</p>
+
+<p class="text-gray-600 mb-6">
+💰 ₹20,000 - ₹35,000
+</p>
+
+<button class="gradient-btn w-full text-white py-3 rounded-2xl">
+Apply Now
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Testimonials -->
+
+<section class="py-24 bg-white">
 
 <div class="max-w-7xl mx-auto px-6">
 
@@ -341,11 +441,10 @@ Client Reviews
 
 <div class="grid md:grid-cols-3 gap-8">
 
-<div class="card-hover bg-white p-8 rounded-3xl shadow-lg">
+<div class="card-hover bg-gray-50 p-8 rounded-3xl shadow-lg">
 
 <p class="text-gray-600 leading-8">
 Amazing HR service and fast recruitment process.
-Highly recommended for companies.
 </p>
 
 <div class="flex items-center mt-6 gap-4">
@@ -362,7 +461,7 @@ class="w-16 h-16 rounded-full">
 
 </div>
 
-<div class="card-hover bg-white p-8 rounded-3xl shadow-lg">
+<div class="card-hover bg-gray-50 p-8 rounded-3xl shadow-lg">
 
 <p class="text-gray-600 leading-8">
 Professional recruitment agency with excellent support.
@@ -382,7 +481,7 @@ class="w-16 h-16 rounded-full">
 
 </div>
 
-<div class="card-hover bg-white p-8 rounded-3xl shadow-lg">
+<div class="card-hover bg-gray-50 p-8 rounded-3xl shadow-lg">
 
 <p class="text-gray-600 leading-8">
 Very responsive HR team and quality hiring services.
@@ -407,3 +506,62 @@ class="w-16 h-16 rounded-full">
 </div>
 
 </section>
+
+<!-- Contact -->
+
+<section id="contact" class="py-24 bg-gray-100">
+
+<div class="max-w-4xl mx-auto px-6">
+
+<div class="bg-white p-10 rounded-[30px] shadow-2xl">
+
+<h2 class="text-4xl font-bold text-blue-700 mb-8 text-center">
+Contact Us
+</h2>
+
+<div class="space-y-5">
+
+<input type="text"
+placeholder="Your Name"
+class="w-full px-5 py-4 rounded-2xl border outline-none">
+
+<input type="email"
+placeholder="Your Email"
+class="w-full px-5 py-4 rounded-2xl border outline-none">
+
+<textarea rows="5"
+placeholder="Write your message..."
+class="w-full px-5 py-4 rounded-2xl border outline-none"></textarea>
+
+<button class="gradient-btn w-full py-4 rounded-2xl text-white font-bold text-lg">
+Send Message
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Footer -->
+
+<footer class="bg-gray-900 text-gray-300 py-10 text-center">
+
+<h4 class="text-3xl font-bold text-white">
+Dilkush HR Services
+</h4>
+
+<p class="text-gray-400 mt-3">
+Professional Recruitment & Placement Agency.
+</p>
+
+<p class="mt-5 text-gray-500">
+© 2026 All Rights Reserved.
+</p>
+
+</footer>
+
+</body>
+</html>
